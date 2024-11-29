@@ -6,3 +6,8 @@ def lister_todos():
 
     for i in range(len(todo_list)):
         print(f"{i+1}. {todo_list[i]}")
+def creer_todos():
+    status = "A faire"
+    title = input("Entrer votre tache: ")
+
+    todo_list.append([title, status])
