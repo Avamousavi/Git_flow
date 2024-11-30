@@ -11,3 +11,23 @@ def creer_todos():
     title = input("Entrer votre tache: ")
 
     todo_list.append([title, status])
+
+
+
+
+
+
+# Menu principal
+choix = ''
+while choix != 'q':
+    # Affichage des choix
+    print('\n==== Menu principal ====')
+    print('1: Lister les todos')
+    print('2: Créer un todo')
+    print('q: quitter')
+    print('========================')
+    # Actions suivant le choix
+    choix = input('=> Choix : ')
+    match choix:
+        case '1': lister_todos()
+        case '2': creer_todos()
