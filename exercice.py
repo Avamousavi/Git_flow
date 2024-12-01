@@ -6,6 +6,7 @@ def lister_todos():
 
     for i in range(len(todo_list)):
         print(f"{i+1}. {todo_list[i]}")
+
 def creer_todos():
     status = "A faire"
     title = input("Entrer votre tache: ")
@@ -13,9 +14,23 @@ def creer_todos():
     todo_list.append([title, status])
 
 
+def modifier_statut_todo():
+    title = input('entrer tache a modifier: ')
+
+    if title not in [todo[0] for todo in todo_list]:
+        print("Not found")
+    else:
+        for todo in todo_list:
+            if title == todo[0]:
+                if todo[1] == "A faire":
+                    todo[1] = "Fait"
+                else:
+                    todo[1] = "A faire"
 
 
 
+
+            
 
 # Menu principal
 choix = ''
