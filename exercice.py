@@ -28,8 +28,20 @@ def modifier_statut_todo():
                     todo[1] = "A faire"
 
 
-
-
+def supprimer_todo():
+    titre = input("Entrez le titre du todo à supprimer : ")
+    
+    for todo in todo_list:
+        if todo[0] == titre:
+            reponse = input(f"Voulez-vous supprimer '{titre}' ? (oui/non) : ")
+            if reponse == "oui":
+                todo_list.remove(todo)
+                print("Todo supprimé!")
+            else:
+                print("Suppression annulée")
+            return
+    
+    print("Todo non trouvé")
             
 
 # Menu principal
@@ -40,6 +52,7 @@ while choix != 'q':
     print('1: Lister les todos')
     print('2: Créer un todo')
     print('3: Changer le statut d\'un todo')
+    print('4: Supprimer un todo')
     print('q: quitter')
     print('========================')
     # Actions suivant le choix
@@ -48,5 +61,6 @@ while choix != 'q':
         case '1': lister_todos()
         case '2': creer_todo()
         case '3': modifier_statut_todo()
+        case '4': supprimer_todo()
         case 'q': print('Au revoir')
         case _: print('Choix invalide')
