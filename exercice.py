@@ -28,8 +28,20 @@ def modifier_statut_todo():
                     todo[1] = "A faire"
 
 
-
-
+def supprimer_todo():
+    titre = input("Entrez le titre du todo à supprimer : ")
+    
+    for todo in todo_list:
+        if todo[0] == titre:
+            reponse = input(f"Voulez-vous supprimer '{titre}' ? (oui/non) : ")
+            if reponse == "oui":
+                todo_list.remove(todo)
+                print("Todo supprimé!")
+            else:
+                print("Suppression annulée")
+            return
+    
+    print("Todo non trouvé")
             
 
 # Menu principal
